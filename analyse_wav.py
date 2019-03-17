@@ -4,9 +4,9 @@ from os import path,system
 from voice import voicedata
 
 def analyse_from_file(file="out.wav"):
-    if file[:-3] == "amr":
-        os.system('ffmpeg -y -i '+file+' -ar 22050 out.wav')
-
+    if file[-3:] == "amr":
+        system('ffmpeg -y -i '+file+' -ar 22050 out.wav')
+        file="out.wav"
 
     AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), file)
 
